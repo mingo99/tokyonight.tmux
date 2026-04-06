@@ -3,9 +3,10 @@
 SELECTED_THEME="$(tmux show-option -gv @tokyo-night-tmux_theme)"
 TRANSPARENT_THEME="$(tmux show-option -gv @tokyo-night-tmux_transparent)"
 
+declare -A THEME
 case $SELECTED_THEME in
 "storm")
-  declare -A THEME=(
+  THEME=(
     ["background"]="#24283b"
     ["foreground"]="#a9b1d6"
     ["black"]="#414868"
@@ -29,7 +30,7 @@ case $SELECTED_THEME in
   ;;
 
 "day")
-  declare -A THEME=(
+  THEME=(
     ["background"]="#d5d6db"
     ["foreground"]="#343b58"
     ["black"]="#0f0f14"
@@ -54,7 +55,7 @@ case $SELECTED_THEME in
 
 *)
   # Default to night theme
-  declare -A THEME=(
+  THEME=(
     ["background"]="#1A1B26"
     ["foreground"]="#a9b1d6"
     ["black"]="#414868"
